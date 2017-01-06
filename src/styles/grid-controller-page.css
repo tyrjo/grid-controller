@@ -1,0 +1,23 @@
+.button-grid {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  background-color: gray;
+  border-radius: 5px;
+  justify-content: space-around;
+}
+
+.button-row {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-around;
+  max-height: 10%;
+}
+
+.button-item {
+  flex-grow: 1;
+  background-color: white;
+  border-radius: 5px;
+  max-width: 10%;
+}
