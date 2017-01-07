@@ -1,0 +1,2 @@
+export const ACTIVE_STATUS = 'ACTIVE_STATUS';
+export const INACTIVE_STATUS = 'INACTIVE_STATUS';

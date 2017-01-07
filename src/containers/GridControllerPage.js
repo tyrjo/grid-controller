@@ -1,22 +1,32 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as actions from '../actions/gridControllerButtonActions';
+import * as buttonActions from '../actions/gridControllerButtonActions';
+import * as sequencerActions from '../actions/sequencerActions';
 import GridControllerPanel from '../components/GridControllerPanel';
+import Sequencer from '../components/Sequencer';
 
 export const GridControllerPage = (props) => {
   return (
-    <GridControllerPanel
-      buttonsState={props.buttonsState}
-      buttonPress={props.actions.buttonPress}
-      buttonRelease={props.actions.buttonRelease}
-    />
+    <div>
+      <Sequencer
+        start={props.sequencerActions.startSequencer}
+        stop={props.sequencerActions.stopSequencer}
+        reset={props.sequencerActions.resetSequencer}
+      />
+      <GridControllerPanel
+        buttonsState={props.buttonsState}
+        buttonPress={props.buttonActions.buttonPress}
+        buttonRelease={props.buttonActions.buttonRelease}
+      />
+    </div>
   );
 };
 
 GridControllerPage.propTypes = {
-  actions: PropTypes.object.isRequired,
-  buttonsState: PropTypes.object.isRequired
+  buttonActions: PropTypes.object.isRequired,
+  buttonsState: PropTypes.object.isRequired,
+  sequencerActions: PropTypes.object.isRequired,
 };
 
 function mapStateToProps(state) {
@@ -28,7 +38,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(actions, dispatch)
+    buttonActions: bindActionCreators(buttonActions, dispatch),
+    sequencerActions: bindActionCreators(sequencerActions, dispatch)
   };
 }
 

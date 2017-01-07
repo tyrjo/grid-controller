@@ -4,9 +4,9 @@ import { Route, IndexRoute } from 'react-router';
 import App from './components/App';
 import HomePage from './components/HomePage';
 import FuelSavingsPage from './containers/FuelSavingsPage'; // eslint-disable-line import/no-named-as-default
-import AboutPage from './components/AboutPage.js';
-import GridControllerPage from './containers/GridControllerPage.js';
-import NotFoundPage from './components/NotFoundPage.js';
+import AboutPage from './components/AboutPage';
+import GridControllerPage from './containers/GridControllerPage'; // eslint-disable-line import/no-named-as-default
+import NotFoundPage from './components/NotFoundPage';
 
 export default (
   <Route path="/" component={App}>

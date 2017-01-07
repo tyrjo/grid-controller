@@ -1,3 +1,5 @@
+import {INACTIVE_STATUS} from '../constants/buttonStatus';
+
 export default {
   gridControllerButtons: getInitialButtonState(),
   fuelSavings: {
@@ -15,14 +17,17 @@ export default {
       annual: 0,
       threeYear: 0
     }
+  },
+  sequencer: {
+    activeButtons: getInitialButtonState()
   }
 };
 
-function getInitialButtonState() {
+export function getInitialButtonState() {
   let buttonsState = {};
   for (let i = 1; i <= 64; i++) {
     buttonsState[i] = {
-      color: "white"
+      status: INACTIVE_STATUS
     };
   }
   return buttonsState;
