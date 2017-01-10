@@ -8,7 +8,7 @@ import Sequencer from '../components/Sequencer';
 
 export const GridControllerPage = (props) => {
   return (
-    <div>
+    <div className="fullheight">
       <Sequencer
         start={props.sequencerActions.startSequencer}
         stop={props.sequencerActions.stopSequencer}
