@@ -3,10 +3,18 @@ import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 
+import setup from 'redux-midi';
+const midiOptions = {
+  sysex: false,
+  software: true,
+};
+const {midiInputMiddleware, midiOutputMiddleware} = setup(midiOptions);
+
 function configureStoreProd(initialState) {
   const middlewares = [
     // Add other middleware on this line...
-
+    midiInputMiddleware,
+    midiOutputMiddleware,
     // thunk middleware can also accept an extra argument to be passed to each thunk action
     // https://github.com/gaearon/redux-thunk#injecting-a-custom-argument
     thunk,

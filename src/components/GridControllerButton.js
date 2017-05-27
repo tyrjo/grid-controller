@@ -7,7 +7,9 @@ const GridControllerButton = ({id, color, label, onButtonPress, onButtonRelease}
     className="button-item"
     key={id}
     onMouseDown={onButtonPress}
+    onMouseOver={onButtonPress}
     onMouseUp={onButtonRelease}
+    onMouseOut={onButtonRelease}
     style={{backgroundColor: color}}
   >
     {label}
